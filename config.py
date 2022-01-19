@@ -1,4 +1,4 @@
-token = "080493a1ecdba3e9d2e90c98fcd0496663831328aeb70b9749cb624800471ecd2ca43c424e36afe720484"
+token = ""
 root = r'/root/BalabobaBot/chats/'
 
 intros_for_help = {'без стиля': 0,
