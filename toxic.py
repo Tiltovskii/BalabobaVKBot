@@ -41,8 +41,3 @@ async def toxic_site(query):
     neutral = round(float(groups[0]), 2)
     toxic = round(float(groups[1]), 2)
     return neutral, toxic
-
-
-if __name__ == '__main__':
-    print(UserAgent().google)
-    print(toxic_site('гейб'))
