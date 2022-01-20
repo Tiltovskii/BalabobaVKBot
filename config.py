@@ -1,6 +1,6 @@
-token = "080493a1ecdba3e9d2e90c98fcd0496663831328aeb70b9749cb624800471ecd2ca43c424e36afe720484"
-admin_id = 113123537
-# root = r'/root/BalabobaBot/chats/'
+token = ""
+admin_id = ...
+root = r'/root/BalabobaBot/chats/'
 
 intros_for_help = {'без стиля': 0,
                    'теории заговора': 1,
@@ -14,4 +14,3 @@ intros_for_help = {'без стиля': 0,
                    'синопсисы фильмов': 9,
                    'гороскоп': 10,
                    'народные мудрости': 11}
-root = r'D:\PyCharmProjects\was at server\BalabobaBot\chats' + '\\'
