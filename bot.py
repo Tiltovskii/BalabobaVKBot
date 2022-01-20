@@ -7,7 +7,7 @@ import os
 bot = Bot(token=token)
 
 
-@bot.on.chat_message(func=lambda message: message.is_mentioned and message.text == 'clear')
+@bot.on.chat_message(func=lambda message: message.is_mentioned and message.text == 'clear' and message.from_id == admin_id)
 async def clear_handler(message: Message):
     try:
         os.remove(root + r'neutral_toxic_rate' + str(message.chat_id) + '.csv')
@@ -24,7 +24,6 @@ async def help_handler(message: Message):
     string_of_keys = '\n'.join(f'{i}) {key}' for i, key in enumerate(keys, start=1))
     users_info = await bot.api.users.get(message.from_id)
     username = users_info[0].first_name
-    print(users_info)
     await message.answer(f'Привет, {username}, одна из функций этого бота - это '
                          f'подсчёт самых токсичных членов беседы. \n'
                          f'Команда list с упоминанием выдаст список '
