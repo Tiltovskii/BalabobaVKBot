@@ -7,13 +7,16 @@ import os
 bot = Bot(token=token)
 
 
-@bot.on.chat_message(func=lambda message: message.is_mentioned and message.text == 'clear' and message.from_id == admin_id)
+@bot.on.chat_message(func=lambda message: message.is_mentioned and message.text == 'clear')
 async def clear_handler(message: Message):
-    try:
-        os.remove(root + r'neutral_toxic_rate' + str(message.chat_id) + '.csv')
-        await message.answer('Рейтинг токсичности обнулен')
-    except:
-        await message.answer('Ошибочка, дружок, директории не существует')
+    if message.from_id == admin_id:
+        try:
+            os.remove(root + r'neutral_toxic_rate' + str(message.chat_id) + '.csv')
+            await message.answer('Рейтинг токсичности обнулен')
+        except:
+            await message.answer('Ошибочка, дружок, директории не существует')
+    else:
+        await message.answer('Ты не обладаешь правами, дружок')
 
 
 @bot.on.chat_message(func=lambda message: message.is_mentioned and message.text == 'help')
